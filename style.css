@@ -1,0 +1,23 @@
+body {
+  background-color: #f0c021;
+}
+
+#roulette {
+  display: flex;
+  margin: 100px;
+  margin-top: 150px;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+#group_name {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#image {
+  height: 400px;
+  width: 400px;
+}
