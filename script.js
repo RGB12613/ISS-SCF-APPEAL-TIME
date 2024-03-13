@@ -35,14 +35,17 @@ function startRoulette() {
 document.getElementById("img_open").addEventListener("change", (e) => {
   let files = e.target.files;
   for (let i = 0; i < files.length; i++) {
+    let img = files[i];
     let name = files[i].name;
+
+    console.log(img);
 
     //重複アップロードを検知
     if (group_filename.includes(name)) {
       continue;
     }
 
-    group_imgs.push(files[i]);
+    group_imgs.push(img);
     group_filename.push(name);
 
     //ディスプレイを作成
@@ -84,7 +87,9 @@ function changeImage() {
 
   console.log(index);
 
-  img.src = "./images/" + available_list[index];
+  img.src = URL.createObjectURL(
+    group_imgs[group_filename.indexOf(available_list[index])]
+  );
   grnm.innerHTML = available_list[index].replace(/\.[^/.]+$/, "");
 
   if (loopCount < loopMax) {
